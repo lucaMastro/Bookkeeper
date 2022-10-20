@@ -6,6 +6,8 @@ import org.junit.Test;
 
 public class TestProva {
 
+    // comment for test automatic build
+
     @Test
     public void test_0(){
         BKStats.getInstance();
