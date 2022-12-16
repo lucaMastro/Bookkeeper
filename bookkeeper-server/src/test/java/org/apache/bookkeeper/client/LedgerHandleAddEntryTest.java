@@ -1,9 +1,5 @@
 package org.apache.bookkeeper.client;
 
-import io.netty.buffer.UnpooledByteBufAllocator;
-import org.apache.bookkeeper.conf.ClientConfiguration;
-import org.apache.bookkeeper.conf.TestBKConfiguration;
-import org.apache.bookkeeper.stats.NullStatsLogger;
 import org.apache.bookkeeper.test.BookKeeperClusterTestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -11,8 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Enumeration;
@@ -22,13 +16,12 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class LedgerHandleAddEntryTest extends BookKeeperClusterTestCase {
 
-    //BookKeeper default digest type, used in test classes.
     private static final BookKeeper.DigestType defaultDigestType = BookKeeper.DigestType.CRC32;
     private static final String validString = "It's not possible to test everything";
     private static final String emptyString = "";
     private static final String password = "my_password";
 
-    // Test parameters
+    // test parameters
     private byte[] data;
     private int offset;
     private int length;
