@@ -27,6 +27,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Verify Bookkeeper
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify -P mutation-profile
 
       - name: Upload PIT report
