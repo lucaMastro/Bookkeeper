@@ -39,6 +39,8 @@ public class LedgerHandleAddEntryTest extends BookKeeperClusterTestCase {
                 { validString.getBytes(), validString.length() + 1, 0, false },
                 { emptyString.getBytes(), 0, 0,true },
                 { null, -1, -1, false },
+                // added after mutation test analisys:
+                { validString.getBytes(),validString.length(), 1, false },
         });
     }
 

@@ -92,7 +92,7 @@ public class LedgerHandleReadEntriesTest extends BookKeeperClusterTestCase {
                 outputTest = false;
             }
         }
-        assertEquals("OUTPUT2: " + outputTest,this.expectedOutput, outputTest);
+        assertEquals(this.expectedOutput, outputTest);
     }
 
     @After
