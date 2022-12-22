@@ -50,7 +50,9 @@ public class BookKeeperAdminFormatTest extends BookKeeperClusterTestCase{
                 // validConf, isInteractive, promptAnswer, force, expected
                 {true, true, "y\n", false, true},
                 {false, false, "", true, false},
-                {true, true, "n\n", false, false}
+                {true, true, "n\n", false, false},
+                // to increase coverage
+                {true, false, "", true, true},
         });
     }
 
@@ -58,17 +60,6 @@ public class BookKeeperAdminFormatTest extends BookKeeperClusterTestCase{
     public void setUp(){
         try {
             super.setUp();
-
-            ClientConfiguration conf = new ClientConfiguration();
-            // set the metadataServiceUri from Zookeeper Cluster
-            conf.setMetadataServiceUri(zkUtil.getMetadataServiceUri());
-
-            BookKeeper bkc = new BookKeeper(conf);
-            // adding 2 ledgers
-            for (int i = 0; i < 2; i++) {
-                    LedgerHandle lh = bkc.createLedger(10, 10, defaultDigestType, password.getBytes());
-                    lh.addEntry("tested doesn't mean correct".getBytes());
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -380,10 +380,12 @@
             <configuration>
               <targetClasses>
                 <param>org.apache.bookkeeper.client.LedgerHandle</param>
+                <param>org.apache.bookkeeper.client.BookKeeperAdmin</param>
               </targetClasses>
               <targetTests>
                 <param>org.apache.bookkeeper.client.LedgerHandleAddEntryTest</param>
                 <param>org.apache.bookkeeper.client.LedgerHandleReadEntriesTest</param>
+                <param>org.apache.bookkeeper.client.BookKeeperAdminFormatTest</param>
               </targetTests>
               <avoidCallsTo>
                 <avoidCallsTo>org.slf4j</avoidCallsTo>
