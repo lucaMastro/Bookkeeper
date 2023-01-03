@@ -15,11 +15,6 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class BookKeeperAdminFormatTest extends BookKeeperClusterTestCase{
 
-
-    private final BookKeeper.DigestType defaultDigestType = BookKeeper.DigestType.CRC32;
-
-    private static final String password = "It's not possible to test everything";
-
     // test params
     private boolean isInteractive;
     private String promptAnswer;

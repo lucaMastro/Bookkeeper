@@ -386,6 +386,7 @@
                 <param>org.apache.bookkeeper.client.LedgerHandleAddEntryTest</param>
                 <param>org.apache.bookkeeper.client.LedgerHandleReadEntriesTest</param>
                 <param>org.apache.bookkeeper.client.BookKeeperAdminFormatTest</param>
+                <param>org.apache.bookkeeper.client.BookKeeperAdminInitBookieTest</param>
               </targetTests>
               <avoidCallsTo>
                 <avoidCallsTo>org.slf4j</avoidCallsTo>
